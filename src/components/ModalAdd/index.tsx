@@ -2,7 +2,7 @@ import { FormEvent, useContext, useState } from 'react';
 import { IoIosClose } from 'react-icons/io';
 import Modal from 'react-modal';
 
-import { ParticipantesContext } from '../_participantesContext';
+import { ParticipantesContext } from '../participantesContext';
 import { Container } from './styles';
 
 interface ModalAddProps {

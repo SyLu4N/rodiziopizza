@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 
-import { ParticipantesProvider } from '../components/_participantesContext';
 import { Header } from '../components/Header';
 import { Main } from '../components/Main';
+import { ParticipantesProvider } from '../components/participantesContext';
 import { GlobalStyles } from '../styles/global';
 
 const Home: NextPage = () => {

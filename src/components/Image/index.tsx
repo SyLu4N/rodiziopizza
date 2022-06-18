@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Participante } from '../_participantesContext';
+import { Participante } from '../participantesContext';
 
 interface ImageProps {
   listParticipantes: Participante[];

@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { Participante, ParticipantesContext } from '../_participantesContext';
 import { Image } from '../Image';
 import { ModalAdd } from '../ModalAdd';
+import { Participante, ParticipantesContext } from '../participantesContext';
 import { Container, Content } from './styles';
 
 export function Main(): JSX.Element {
