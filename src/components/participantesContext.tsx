@@ -42,10 +42,6 @@ export function ParticipantesProvider({ children }: participanteProvider) {
   }
 
   async function setParticipante(value: Participante[]) {
-    value.map((participante) => {
-      if (participante.contador < 0) participante.contador = 0;
-    });
-
     localStorage.setItem('PARTICIPANTES', JSON.stringify(value));
     setParticipantes(value);
   }
