@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Participante } from '../../pages/_participantesContext';
+import { Participante } from '../_participantesContext';
 
 interface ImageProps {
   listParticipantes: Participante[];
@@ -58,6 +58,7 @@ export function Image({
 
     const div = document.querySelector(`.pizza${index}`) as HTMLElement;
     div.addEventListener('mousedown', exeFunction);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isClick]);
 
   return (
