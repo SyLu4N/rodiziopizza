@@ -70,7 +70,7 @@ export function Main(): JSX.Element {
               {participante.contador}
               <em></em>
             </span>
-            <p onDoubleClick={() => dbHandle(index)}>
+            <div className="p" onDoubleClick={() => dbHandle(index)}>
               {participante.nome}
               <strong className={`participante${index}`}>
                 <p className="excluir" onClick={() => handleDelete(index)}>
@@ -80,7 +80,7 @@ export function Main(): JSX.Element {
                   X
                 </p>
               </strong>
-            </p>
+            </div>
             <Image
               listParticipantes={listParticipantes}
               setListParticipantes={setListParticipantes}

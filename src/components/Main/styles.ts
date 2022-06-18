@@ -78,7 +78,7 @@ export const Content = styled.div`
       }
     }
 
-    p {
+    .p {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -91,6 +91,9 @@ export const Content = styled.div`
       box-shadow: 5px 6px var(--padrao);
       width: 70%;
       cursor: default;
+      border-radius: 0;
+      border: none;
+      margin-bottom: 1rem;
 
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #fff;
@@ -161,3 +164,5 @@ export const Content = styled.div`
     }
   }
 `;
+
+export const Names = styled.div``;
