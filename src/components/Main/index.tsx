@@ -60,32 +60,34 @@ export function Main(): JSX.Element {
 
   return (
     <Container>
-      <Content>
-        {listParticipantes.map((participante, index) => (
-          <div key={index}>
-            <span>
-              {participante.contador}
-              <em></em>
-            </span>
-            <div className="p" onDoubleClick={() => dbHandle(index)}>
-              {participante.nome}
-              <strong className={`participante${index}`}>
-                <p className="excluir" onClick={() => handleDelete(index)}>
-                  ✔
-                </p>
-                <p className="cancelar" onClick={() => handleCancel(index)}>
-                  X
-                </p>
-              </strong>
+      {listParticipantes.length > 0 && (
+        <Content>
+          {listParticipantes.map((participante, index) => (
+            <div key={index}>
+              <span>
+                {participante.contador}
+                <em></em>
+              </span>
+              <div className="p" onDoubleClick={() => dbHandle(index)}>
+                {participante.nome}
+                <strong className={`participante${index}`}>
+                  <p className="excluir" onClick={() => handleDelete(index)}>
+                    ✔
+                  </p>
+                  <p className="cancelar" onClick={() => handleCancel(index)}>
+                    X
+                  </p>
+                </strong>
+              </div>
+              <Image
+                listParticipantes={listParticipantes}
+                setListParticipantes={setListParticipantes}
+                index={index}
+              />
             </div>
-            <Image
-              listParticipantes={listParticipantes}
-              setListParticipantes={setListParticipantes}
-              index={index}
-            />
-          </div>
-        ))}
-      </Content>
+          ))}
+        </Content>
+      )}
       <button onClick={modelResultOpen}>+ Novo participante</button>
       <ModalAdd
         isModelResult={isModelResult}
