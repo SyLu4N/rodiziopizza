@@ -59,9 +59,9 @@ export const Content = styled.div`
       -webkit-text-stroke-color: #fff;
 
       position: relative;
-      min-height: 60px;
-      max-height: 60px;
-      min-width: 60px;
+      min-height: 70px;
+      max-height: 70px;
+      min-width: 70px;
       padding-bottom: 4px;
       background: var(--padrao);
       border: 3px solid white;
@@ -71,8 +71,8 @@ export const Content = styled.div`
         position: absolute;
         top: 2px;
 
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 60px;
         border: 1px dashed white;
         border-radius: 100%;
       }
@@ -89,11 +89,10 @@ export const Content = styled.div`
       position: relative;
       background-color: var(--details);
       box-shadow: 5px 6px var(--padrao);
-      width: 70%;
+      width: 100%;
       cursor: default;
       border-radius: 0;
       border: none;
-      margin-bottom: 1rem;
 
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #fff;
@@ -114,6 +113,7 @@ export const Content = styled.div`
           width: 25px;
           border-radius: 0.3rem;
           height: 25px;
+          max-height: 25px;
 
           box-shadow: 0px 0px transparent;
           -webkit-text-stroke-width: 0px;
@@ -139,8 +139,8 @@ export const Content = styled.div`
       justify-content: center;
 
       position: relative;
-      min-height: 60px;
-      min-width: 60px;
+      min-height: 70px;
+      min-width: 70px;
       background: var(--padrao);
       border: 3px solid white;
       border-radius: 100%;
@@ -156,8 +156,8 @@ export const Content = styled.div`
         top: 2px;
         left: 2px;
 
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 60px;
         border: 1px dashed white;
         border-radius: 100%;
       }

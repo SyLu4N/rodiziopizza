@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { Participante } from '../participantesContext';
+import { Container } from './styles';
 
 interface ImageProps {
   listParticipantes: Participante[];
@@ -62,7 +63,7 @@ export function Image({
   }, [isClick]);
 
   return (
-    <div
+    <Container
       className={`pizza${index}`}
       onClick={() => {
         setIsClick(true);
@@ -73,6 +74,6 @@ export function Image({
         <img src="/assets/pizza.svg" alt="Pizza" />
         <em></em>
       </abbr>
-    </div>
+    </Container>
   );
 }
