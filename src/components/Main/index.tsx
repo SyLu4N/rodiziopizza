@@ -70,6 +70,7 @@ export function Main(): JSX.Element {
     setName('');
     setListParticipantes(newParticipantes);
     setParticipante(newParticipantes);
+    clearRemove(index);
   }
 
   function clearRemove(index: number) {

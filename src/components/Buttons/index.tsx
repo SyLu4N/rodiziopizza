@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 
 import { Participante, ParticipantesContext } from '../participantesContext';
 import { Container } from './styles';
