@@ -1,5 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
+import { FaTrashAlt } from 'react-icons/fa';
 
+import { Buttons } from '../Buttons';
+import { Contador } from '../Contador';
 import { Image } from '../Image';
 import { ModalAdd } from '../ModalAdd';
 import { Participante, ParticipantesContext } from '../participantesContext';
@@ -10,13 +13,13 @@ export function Main(): JSX.Element {
   const [listParticipantes, setListParticipantes] = useState<Participante[]>(
     []
   );
+  const [currentIndex, setCurrentIndex] = useState<null | number>(null);
   const [name, setName] = useState('');
+  const [isModelResult, setIsModelResult] = useState(false);
 
   useEffect(() => {
     setListParticipantes(participantes);
   }, [participantes]);
-
-  const [isModelResult, setIsModelResult] = useState(false);
 
   function modelResultClose() {
     setIsModelResult(false);
@@ -26,36 +29,65 @@ export function Main(): JSX.Element {
     setIsModelResult(true);
   }
 
-  function dbHandle(index: number) {
+  function askDelete(index: number) {
     const newParticipantes = [...listParticipantes];
+    const svg = document.querySelector(`.svg${index}`) as HTMLElement;
     const strong = document.querySelector(
       `.participante${index}`
     ) as HTMLElement;
 
+    if (name !== '') clearRemove(index);
+
     const nome = newParticipantes[index].nome;
-    setName(nome);
     newParticipantes[index].nome = 'Excluir?';
+    setName(nome);
+    setCurrentIndex(index);
     setListParticipantes(newParticipantes);
-    strong.style.display = 'flex';
+
+    svg.classList.add('hidden');
+    strong.setAttribute('id', 'flex');
+  }
+
+  function handleCancel(index: number) {
+    const newParticipantes = [...listParticipantes];
+
+    const strong = document.querySelector(
+      `.participante${index}`
+    ) as HTMLElement;
+    const svg = document.querySelector(`.svg${index}`) as HTMLElement;
+
+    newParticipantes[index].nome = name;
+    setListParticipantes(newParticipantes);
+
+    strong.removeAttribute('id');
+    svg.classList.remove('hidden');
   }
 
   function handleDelete(index: number) {
     const newParticipantes = [...listParticipantes];
     newParticipantes.splice(index, 1);
 
+    setName('');
     setListParticipantes(newParticipantes);
     setParticipante(newParticipantes);
   }
 
-  function handleCancel(index: number) {
+  function clearRemove(index: number) {
     const newParticipantes = [...listParticipantes];
-    const strong = document.querySelector(
-      `.participante${index}`
-    ) as HTMLElement;
 
-    newParticipantes[index].nome = name;
+    const strong = document.querySelector(
+      `.participante${currentIndex}`
+    ) as HTMLElement;
+    const svg = document.querySelector(`.svg${currentIndex}`) as HTMLElement;
+
+    if (currentIndex === null) {
+      return setCurrentIndex(index);
+    }
+
+    newParticipantes[currentIndex].nome = name;
     setListParticipantes(newParticipantes);
-    strong.style.display = 'none';
+    strong.removeAttribute('id');
+    svg.classList.remove('hidden');
   }
 
   return (
@@ -64,12 +96,18 @@ export function Main(): JSX.Element {
         <Content>
           {listParticipantes.map((participante, index) => (
             <div key={index}>
-              <span>
-                {participante.contador}
-                <em></em>
-              </span>
-              <div className="p" onDoubleClick={() => dbHandle(index)}>
-                {participante.nome}
+              <Contador participante={participante} />
+              <div className="contentName">
+                <div className="contentText">
+                  <p className="text">{participante.nome}</p>
+                  <p className="shadow">{participante.nome}</p>
+                </div>
+                <FaTrashAlt
+                  size={20}
+                  onClick={() => askDelete(index)}
+                  className={`svg${index}`}
+                />
+
                 <strong className={`participante${index}`}>
                   <p className="excluir" onClick={() => handleDelete(index)}>
                     ✔
@@ -79,10 +117,12 @@ export function Main(): JSX.Element {
                   </p>
                 </strong>
               </div>
-              <Image
+              <Image />
+              <Buttons
                 listParticipantes={listParticipantes}
                 setListParticipantes={setListParticipantes}
                 index={index}
+                clearRemove={clearRemove}
               />
             </div>
           ))}

@@ -41,61 +41,59 @@ export const Content = styled.div`
   div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
 
+    margin-bottom: 0.7rem;
     padding: 0.2rem;
 
-    span {
+    .contentName {
       display: flex;
       align-items: center;
       justify-content: center;
 
-      font-size: 3rem;
-      color: var(--letter);
-      text-shadow: insert 1px 1px black;
-
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: #fff;
-
-      position: relative;
-      min-height: 70px;
-      max-height: 70px;
-      min-width: 70px;
-      padding-bottom: 4px;
-      background: var(--padrao);
-      border: 3px solid white;
-      border-radius: 100%;
-
-      em {
-        position: absolute;
-        top: 2px;
-
-        height: 60px;
-        width: 60px;
-        border: 1px dashed white;
-        border-radius: 100%;
-      }
-    }
-
-    .p {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      color: var(--letter);
       font-size: 2.5rem;
 
       position: relative;
       background-color: var(--details);
       box-shadow: 5px 6px var(--padrao);
+      min-height: 50px;
+      margin-top: 6px;
       width: 100%;
       cursor: default;
       border-radius: 0;
       border: none;
 
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: #fff;
+      .contentText {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+
+        position: relative;
+        max-height: 50px;
+
+        .text {
+          display: flex;
+          color: red;
+          margin-left: 0.2rem;
+          margin-top: 0.4rem;
+        }
+
+        .shadow {
+          position: absolute;
+          color: white;
+          text-shadow: 2px 2px #91b23b;
+        }
+      }
+
+      svg {
+        color: #ed4742;
+        right: 11%;
+        position: absolute;
+        cursor: pointer;
+
+        &:hover {
+          filter: brightness(0.95);
+        }
+      }
 
       strong {
         display: none;
@@ -103,7 +101,9 @@ export const Content = styled.div`
         gap: 0.3rem;
         position: absolute;
 
-        right: 5px;
+        bottom: -35%;
+        margin: auto;
+
         p {
           display: flex;
           align-items: center;
@@ -123,43 +123,15 @@ export const Content = styled.div`
           color: white;
           padding-top: 1px;
           background-color: red;
+          cursor: pointer;
         }
 
         .excluir {
           color: white;
           padding-top: 1px;
           background-color: var(--letter);
+          cursor: pointer;
         }
-      }
-    }
-
-    div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      position: relative;
-      min-height: 70px;
-      min-width: 70px;
-      background: var(--padrao);
-      border: 3px solid white;
-      border-radius: 100%;
-      cursor: pointer;
-      transition: 300ms all;
-
-      &:hover {
-        filter: brightness(0.95);
-      }
-
-      em {
-        position: absolute;
-        top: 2px;
-        left: 2px;
-
-        height: 60px;
-        width: 60px;
-        border: 1px dashed white;
-        border-radius: 100%;
       }
     }
   }

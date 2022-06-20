@@ -59,6 +59,7 @@ export const GlobalStyles = createGlobalStyle`
     left: 0;
     bottom: -4rem;
     background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
   }
 
   .modalContent {
@@ -72,5 +73,13 @@ export const GlobalStyles = createGlobalStyle`
       height: auto;
       max-height: 300px;
     }
+  }
+
+  #flex {
+    display: flex;
+  }
+
+  .hidden {
+    display: none;
   }
 `;
