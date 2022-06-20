@@ -3,7 +3,6 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 import { Buttons } from '../Buttons';
 import { Contador } from '../Contador';
-import { Image } from '../Image';
 import { ModalAdd } from '../ModalAdd';
 import { Participante, ParticipantesContext } from '../participantesContext';
 import { Container, Content } from './styles';
@@ -120,7 +119,6 @@ export function Main(): JSX.Element {
                   </p>
                 </strong>
               </div>
-              <Image />
               <Buttons
                 listParticipantes={listParticipantes}
                 setListParticipantes={setListParticipantes}

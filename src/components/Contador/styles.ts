@@ -15,7 +15,7 @@ export const Container = styled.span`
   z-index: 1;
 
   p {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--letter);
     text-shadow: insert 1px 1px black;
 

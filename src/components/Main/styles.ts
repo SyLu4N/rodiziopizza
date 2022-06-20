@@ -86,7 +86,7 @@ export const Content = styled.div`
 
       svg {
         color: #ed4742;
-        right: 11%;
+        right: 1rem;
         position: absolute;
         cursor: pointer;
 

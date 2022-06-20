@@ -32,9 +32,7 @@ export const GlobalStyles = createGlobalStyle`
       padding-top: 1rem;
     }
 
-    @media (max-width: 455px) {
-      background-size: contain;
-    }
+  
   }
 
   @media (max-width: 1000px) {
