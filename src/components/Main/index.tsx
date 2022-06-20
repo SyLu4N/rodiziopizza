@@ -73,6 +73,8 @@ export function Main(): JSX.Element {
   }
 
   function clearRemove(index: number) {
+    if (!name) return;
+
     const newParticipantes = [...listParticipantes];
 
     const strong = document.querySelector(
