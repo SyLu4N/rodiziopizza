@@ -26,6 +26,15 @@ export const Container = styled.main`
       filter: brightness(0.95);
     }
   }
+
+  .start {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .finish {
+    margin-bottom: auto;
+  }
 `;
 
 export const Content = styled.div`
@@ -84,14 +93,16 @@ export const Content = styled.div`
         }
       }
 
-      svg {
+      img {
         color: #ed4742;
         right: 1rem;
         position: absolute;
         cursor: pointer;
+        width: 25px;
+        transition: 300ms all;
 
         &:hover {
-          filter: brightness(0.95);
+          filter: brightness(0.85);
         }
       }
 

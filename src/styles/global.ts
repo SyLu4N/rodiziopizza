@@ -48,19 +48,21 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .overlayModal {
-    padding: 4rem;
     display: flex;
     justify-content: center;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
-    bottom: -4rem;
+    bottom: 0;
+    height: 200vh;
     background: rgba(0, 0, 0, 0.6);
     z-index: 2;
   }
 
   .modalContent {
+    display: flex;
+    align-items: center;
     height: 200px;
     position: relative;
     padding: 1rem 2rem;

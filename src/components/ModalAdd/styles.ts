@@ -22,7 +22,7 @@ export const Container = styled.form`
 
   .closeModal {
     position: absolute;
-    top: 1.5px;
+    top: -4%;
     right: -25%;
 
     background-color: transparent;

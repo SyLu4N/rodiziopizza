@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import { FaTrashAlt } from 'react-icons/fa';
+
+import Head from 'next/head';
 
 import { Buttons } from '../Buttons';
 import { Contador } from '../Contador';
@@ -94,46 +95,59 @@ export function Main(): JSX.Element {
 
   return (
     <Container>
-      {listParticipantes.length > 0 && (
-        <Content>
-          {listParticipantes.map((participante, index) => (
-            <div key={index}>
-              <Contador participante={participante} />
-              <div className="contentName">
-                <div className="contentText">
-                  <p className="text">{participante.nome}</p>
-                  <p className="shadow">{participante.nome}</p>
-                </div>
-                <FaTrashAlt
-                  size={20}
-                  onClick={() => askDelete(index)}
-                  className={`svg${index}`}
-                />
+      <Head>
+        <title>RodizioPizza | Home</title>
+      </Head>
 
-                <strong className={`participante${index}`}>
-                  <p className="excluir" onClick={() => handleDelete(index)}>
-                    ✔
-                  </p>
-                  <p className="cancelar" onClick={() => handleCancel(index)}>
-                    X
-                  </p>
-                </strong>
-              </div>
-              <Buttons
-                listParticipantes={listParticipantes}
-                setListParticipantes={setListParticipantes}
-                index={index}
-                clearRemove={clearRemove}
-              />
-            </div>
-          ))}
-        </Content>
-      )}
-      <button onClick={modelResultOpen}>+ Novo participante</button>
       <ModalAdd
         isModelResult={isModelResult}
         modelResultClose={modelResultClose}
       />
+
+      {listParticipantes.length > 0 ? (
+        <>
+          <Content>
+            {listParticipantes.map((participante, index) => (
+              <div key={index}>
+                <Contador participante={participante} />
+                <div className="contentName">
+                  <div className="contentText">
+                    <p className="text">{participante.nome}</p>
+                    <p className="shadow">{participante.nome}</p>
+                  </div>
+                  <img
+                    src="/assets/lixeira.svg"
+                    alt="Lixeira"
+                    onClick={() => askDelete(index)}
+                    className={`svg${index}`}
+                  />
+
+                  <strong className={`participante${index}`}>
+                    <p className="excluir" onClick={() => handleDelete(index)}>
+                      ✔
+                    </p>
+                    <p className="cancelar" onClick={() => handleCancel(index)}>
+                      X
+                    </p>
+                  </strong>
+                </div>
+                <Buttons
+                  listParticipantes={listParticipantes}
+                  setListParticipantes={setListParticipantes}
+                  index={index}
+                  clearRemove={clearRemove}
+                />
+              </div>
+            ))}
+            <button onClick={modelResultOpen}>+ Novo participante</button>
+          </Content>
+          <button className="finish">Finalizar Rodízio</button>
+        </>
+      ) : (
+        <button className="start" onClick={modelResultOpen}>
+          Começar Rodízio
+        </button>
+      )}
     </Container>
   );
 }
