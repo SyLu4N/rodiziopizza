@@ -20,19 +20,14 @@ export const GlobalStyles = createGlobalStyle`
       font-family: 'Alegreya';
       src: url('/assets/alegreya-sans-sc-black.ttf');
     }
-
-    font-family: 'Alegreya';
+    font-family: 'Alegreya';    
     
-    background-image: url('/assets/backgroundImage.png');
-    background-size: cover;
-
     body {
       max-width: 550px;
       margin: auto;
       padding-top: 1rem;
     }
 
-  
   }
 
   @media (max-width: 1000px) {
