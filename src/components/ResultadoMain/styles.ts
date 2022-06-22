@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
+  max-width: 550px;
+  margin: auto;
+
   .totem {
     display: block;
     margin: auto;

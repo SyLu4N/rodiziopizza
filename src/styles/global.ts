@@ -23,6 +23,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Alegreya';    
     
     body {
+      background-image: url('/assets/backgroundPink.png');
+      background-size: cover;
+
       max-width: 550px;
       margin: auto;
       padding-top: 1rem;

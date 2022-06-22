@@ -1,11 +1,10 @@
 import { ResultadoMain } from '../../components/ResultadoMain';
-import { ResultIndex } from './resultadoStyles';
+import { Container } from './resultadoStyles';
 
 export default function Resultado() {
   return (
-    <>
+    <Container>
       <ResultadoMain />
-      <ResultIndex />
-    </>
+    </Container>
   );
 }
