@@ -2,8 +2,9 @@ import { useContext, useEffect, useState } from 'react';
 
 import { Participante, ParticipantesContext } from '../participantesContext';
 import { Contador } from './Contador';
+import { Details } from './Details';
 import { Rank } from './Rank';
-import { Container, Content } from './styles';
+import { Container, Content, ContentRank } from './styles';
 import { Text } from './Text';
 
 export function ResultadoMain() {
@@ -26,15 +27,17 @@ export function ResultadoMain() {
     <Container>
       <img className="totem" src="/assets/totem.svg" alt="Totem de trófeus" />
 
-      <div>
+      <Content>
         {newParticipantes.map((participante, index) => (
-          <Content key={index}>
+          <ContentRank key={index}>
             <Rank rank={rank++} />
             <Text name={participante.nome} />
             <Contador value={participante.contador} />
-          </Content>
+          </ContentRank>
         ))}
-      </div>
+      </Content>
+
+      <Details />
     </Container>
   );
 }

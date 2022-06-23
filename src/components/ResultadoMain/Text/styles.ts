@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
-  width: 200px;
+  width: 320px;
   text-align: left;
+  font-size: 2rem;
 
   .text {
     color: red;

@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
+  width: 80px;
 
   font-size: 2.5rem;
   color: var(--letter);
@@ -14,12 +14,13 @@ export const Container = styled.div`
   position: relative;
 
   span {
+    font-size: 3.4rem;
     z-index: 1;
   }
 
   img {
     position: absolute;
-    width: 50px;
+    width: 70px;
     top: 8%;
   }
 `;
