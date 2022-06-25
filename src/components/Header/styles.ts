@@ -4,18 +4,13 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-bottom: 3.5rem;
-  border-bottom: 1px solid var(--details);
+  margin-bottom: 1rem;
 
   h1 {
     font-variant: small-caps;
     font-family: 'Alegreya', sans-serif;
-    font-size: 2.5rem;
-    color: var(--letter);
-
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #fff;
+    font-size: 3rem;
+    color: white;
   }
 
   svg {

@@ -141,9 +141,11 @@ export function Main(): JSX.Element {
             ))}
             <button onClick={modelResultOpen}>+ Novo participante</button>
           </Content>
-          <a href="/resultado" className="finish">
-            Finalizar Rodízio
-          </a>
+          <div className="finalizar">
+            <a href="/resultado" className="finish">
+              Finalizar
+            </a>
+          </div>
         </>
       ) : (
         <button className="start" onClick={modelResultOpen}>

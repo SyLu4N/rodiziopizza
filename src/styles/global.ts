@@ -45,6 +45,12 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  @media (max-width: 450px) {
+    html{
+      font-size: 80%;
+    }
+  }
+
   .overlayModal {
     display: flex;
     justify-content: center;

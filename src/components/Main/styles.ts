@@ -1,12 +1,41 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
+  @font-face {
+    font-family: 'Carlson';
+    src: url('/assets/Carlson.ttf');
+  }
+
   display: flex;
   flex-direction: column;
 
   margin: auto;
   height: 80vh;
 
+  .finalizar {
+    margin: auto;
+    margin-top: 4rem;
+    padding-bottom: 3rem;
+
+    a {
+      padding: 0.5rem;
+      max-width: 200px;
+      transition: all 150ms;
+
+      font-size: 3.5rem;
+      font-family: 'Carlson';
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0px 0px 3px black;
+      border-radius: 10px;
+      color: white;
+
+      &:hover {
+        text-shadow: 2px 0px 3px black;
+        font-size: 3.7rem;
+      }
+    }
+  }
   button {
     display: flex;
     align-items: center;
@@ -103,6 +132,14 @@ export const Content = styled.div`
 
         &:hover {
           filter: brightness(0.85);
+        }
+      }
+
+      @media (max-width: 440px) {
+        width: 280px;
+
+        img {
+          right: 0.4rem;
         }
       }
 

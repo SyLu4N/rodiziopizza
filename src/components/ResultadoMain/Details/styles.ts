@@ -1,25 +1,30 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 5rem;
-  padding-left: 10%;
-  max-width: none;
+  padding: 0 1rem;
 
   .devoradores {
     div {
+      position: relative;
       height: 30px;
       width: 110px;
-      margin-left: -1.6rem;
-    }
-
-    img {
-      margin-top: 3rem;
-      display: inline-block;
-      width: 110px;
+      padding-right: 9rem;
     }
 
     p {
-      margin-left: -1.4rem;
+      margin-left: -4rem;
+    }
+
+    img {
+      left: -1.3rem;
+      position: absolute;
+      margin-top: 3rem;
+      display: inline-block;
+      width: 85px;
     }
   }
 
@@ -43,8 +48,6 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       font-size: 1.5rem;
-
-      width: 320px;
     }
 
     span {
@@ -52,7 +55,7 @@ export const Container = styled.div`
       align-items: center;
       justify-content: left;
 
-      width: 80px;
+      width: 55px;
       margin-bottom: 8px;
       margin-left: 2rem;
       font-size: 3rem;
