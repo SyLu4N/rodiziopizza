@@ -20,17 +20,9 @@ export const GlobalStyles = createGlobalStyle`
       font-family: 'Alegreya';
       src: url('/assets/alegreya-sans-sc-black.ttf');
     }
+
+    scroll-behavior: smooth;
     font-family: 'Alegreya';    
-    
-    body {
-      background-image: url('/assets/backgroundPink.png');
-      background-size: cover;
-
-      max-width: 550px;
-      margin: auto;
-      padding-top: 1rem;
-    }
-
   }
 
   @media (max-width: 1000px) {
@@ -50,6 +42,10 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 80%;
     }
   }
+  
+  a {
+    text-decoration: none;
+  }
 
   .overlayModal {
     display: flex;
@@ -59,7 +55,8 @@ export const GlobalStyles = createGlobalStyle`
     right: 0;
     left: 0;
     bottom: 0;
-    height: 200vh;
+
+    padding-bottom: 150vmax;
     background: rgba(0, 0, 0, 0.6);
     z-index: 2;
   }
@@ -72,16 +69,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 1rem 2rem;
     background: var(--colorbackground);
     border-radius: 0.25rem;
-
-    @media (max-width: 1000px) {
-      height: auto;
-      max-height: 300px;
-    }
-  }
-
-  #flex {
-    display: flex;
-  }
+  } 
 
   .hidden {
     display: none;

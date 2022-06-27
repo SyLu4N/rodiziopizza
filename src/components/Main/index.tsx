@@ -4,6 +4,8 @@ import Head from 'next/head';
 
 import { Buttons } from '../Buttons';
 import { Contador } from '../Contador';
+import { Finish } from '../Finish';
+import { Header } from '../Header';
 import { ModalAdd } from '../ModalAdd';
 import { Participante, ParticipantesContext } from '../participantesContext';
 import { Container, Content } from './styles';
@@ -22,10 +24,14 @@ export function Main(): JSX.Element {
   }, [participantes]);
 
   function modelResultClose() {
+    document.body.style.overflowY = 'visible';
     setIsModelResult(false);
   }
 
   function modelResultOpen() {
+    setTimeout(() => {
+      document.body.style.overflowY = 'hidden';
+    }, 400);
     setIsModelResult(true);
   }
 
@@ -104,11 +110,13 @@ export function Main(): JSX.Element {
         modelResultClose={modelResultClose}
       />
 
+      <Header id="header" />
+
       {listParticipantes.length > 0 ? (
         <>
           <Content>
             {listParticipantes.map((participante, index) => (
-              <div key={index}>
+              <div key={index} className="contentPart">
                 <Contador participante={participante} />
                 <div className="contentName">
                   <div className="contentText">
@@ -139,13 +147,11 @@ export function Main(): JSX.Element {
                 />
               </div>
             ))}
-            <button onClick={modelResultOpen}>+ Novo participante</button>
           </Content>
-          <div className="finalizar">
-            <a href="/resultado" className="finish">
-              Finalizar
-            </a>
-          </div>
+          <a className="new" href="#header" onClick={modelResultOpen}>
+            + Novo participante
+          </a>
+          <Finish />
         </>
       ) : (
         <button className="start" onClick={modelResultOpen}>

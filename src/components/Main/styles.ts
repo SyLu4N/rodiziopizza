@@ -6,46 +6,21 @@ export const Container = styled.main`
     src: url('/assets/Carlson.ttf');
   }
 
-  display: flex;
-  flex-direction: column;
+  background-image: url('/assets/backgroundPink.png');
+  background-size: cover;
+  position: relative;
+  padding-bottom: 2rem;
 
-  margin: auto;
-  height: 80vh;
-
-  .finalizar {
-    margin: auto;
-    margin-top: 4rem;
-    padding-bottom: 3rem;
-
-    a {
-      padding: 0.5rem;
-      max-width: 200px;
-      transition: all 150ms;
-
-      font-size: 3.5rem;
-      font-family: 'Carlson';
-      text-align: center;
-      text-decoration: none;
-      text-shadow: 0px 0px 3px black;
-      border-radius: 10px;
-      color: white;
-
-      &:hover {
-        text-shadow: 2px 0px 3px black;
-        font-size: 3.7rem;
-      }
-    }
-  }
-  button {
+  .new {
     display: flex;
     align-items: center;
     justify-content: center;
 
     background-color: var(--letter);
     padding: 0.7rem;
-    margin-top: 2rem;
-    margin-left: auto;
-    margin-right: 0.2rem;
+    margin: 2rem 0.2rem 4rem auto;
+    height: 40px;
+    width: 180px;
     border-radius: 10px;
     color: white;
     cursor: pointer;
@@ -67,6 +42,19 @@ export const Container = styled.main`
 `;
 
 export const Content = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+  gap: 1rem;
+  justify-content: center;
+
+  margin-top: 3rem;
+  margin-bottom: 0.7rem;
+  padding: 0.2rem;
+
+  .contentPart {
+    display: flex;
+  }
+
   h1 {
     text-align: center;
     color: white;
@@ -76,113 +64,100 @@ export const Content = styled.div`
     border-radius: 10px;
   }
 
-  div {
+  .contentName {
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    margin-bottom: 0.7rem;
-    padding: 0.2rem;
+    font-size: 2.5rem;
 
-    .contentName {
+    position: relative;
+    background-color: var(--details);
+    box-shadow: 5px 6px var(--padrao);
+    height: 55px;
+    margin-top: 1rem;
+    width: 100%;
+
+    .contentText {
       display: flex;
       align-items: center;
-      justify-content: center;
-
-      font-size: 2.5rem;
+      margin-bottom: 0;
 
       position: relative;
-      background-color: var(--details);
-      box-shadow: 5px 6px var(--padrao);
-      min-height: 50px;
-      margin-top: 6px;
-      width: 100%;
-      cursor: default;
-      border-radius: 0;
-      border: none;
+      max-height: 50px;
 
-      .contentText {
+      .text {
         display: flex;
-        align-items: center;
-        margin-bottom: 0;
-
-        position: relative;
-        max-height: 50px;
-
-        .text {
-          display: flex;
-          color: red;
-          margin-left: 0.2rem;
-          margin-top: 0.4rem;
-        }
-
-        .shadow {
-          position: absolute;
-          color: white;
-          text-shadow: 2px 2px #91b23b;
-        }
+        color: red;
+        margin-left: 0.2rem;
+        margin-top: 0.4rem;
       }
+
+      .shadow {
+        position: absolute;
+        color: white;
+        text-shadow: 2px 2px #91b23b;
+      }
+    }
+
+    img {
+      color: #ed4742;
+      right: 1rem;
+      position: absolute;
+      cursor: pointer;
+      width: 25px;
+      transition: 300ms all;
+
+      &:hover {
+        filter: brightness(0.85);
+      }
+    }
+
+    @media (max-width: 440px) {
+      width: 280px;
 
       img {
-        color: #ed4742;
-        right: 1rem;
-        position: absolute;
-        cursor: pointer;
-        width: 25px;
-        transition: 300ms all;
-
-        &:hover {
-          filter: brightness(0.85);
-        }
+        right: 0.4rem;
       }
+    }
 
-      @media (max-width: 440px) {
-        width: 280px;
+    strong {
+      display: none;
+      align-items: center;
+      gap: 0.3rem;
+      position: absolute;
 
-        img {
-          right: 0.4rem;
-        }
-      }
+      bottom: -35%;
+      margin: auto;
 
-      strong {
-        display: none;
+      p {
+        display: flex;
         align-items: center;
-        gap: 0.3rem;
-        position: absolute;
+        justify-content: center;
 
-        bottom: -35%;
-        margin: auto;
+        font-size: 1rem;
+        width: 25px;
+        border-radius: 0.3rem;
+        height: 25px;
+        max-height: 25px;
 
-        p {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        box-shadow: 0px 0px transparent;
+        -webkit-text-stroke-width: 0px;
+      }
 
-          font-size: 1rem;
-          width: 25px;
-          border-radius: 0.3rem;
-          height: 25px;
-          max-height: 25px;
+      .cancelar {
+        color: white;
+        padding-top: 1px;
+        background-color: red;
+        cursor: pointer;
+      }
 
-          box-shadow: 0px 0px transparent;
-          -webkit-text-stroke-width: 0px;
-        }
-
-        .cancelar {
-          color: white;
-          padding-top: 1px;
-          background-color: red;
-          cursor: pointer;
-        }
-
-        .excluir {
-          color: white;
-          padding-top: 1px;
-          background-color: var(--letter);
-          cursor: pointer;
-        }
+      .excluir {
+        color: white;
+        padding-top: 1px;
+        background-color: var(--letter);
+        cursor: pointer;
       }
     }
   }
 `;
-
-export const Names = styled.div``;

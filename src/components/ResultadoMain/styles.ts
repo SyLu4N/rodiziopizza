@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-  margin: auto;
+  background-image: url('/assets/backgroundGreen.png');
+  background-size: cover;
+
+  padding: 1rem 0;
+  padding-bottom: 5rem;
+
   .totem {
     display: block;
     margin: auto;

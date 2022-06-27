@@ -1,8 +1,12 @@
 import { Container } from './styles';
 
-export function Header() {
+interface HeaderProps {
+  id: string;
+}
+
+export function Header({ id }: HeaderProps) {
   return (
-    <Container>
+    <Container id={id && id}>
       <h1>Hoje vou dar prejuízo!</h1>
     </Container>
   );
