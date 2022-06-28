@@ -8,7 +8,7 @@ export const Container = styled.main`
 
   background-image: url('/assets/backgroundPink.png');
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   padding-bottom: 2rem;
 
