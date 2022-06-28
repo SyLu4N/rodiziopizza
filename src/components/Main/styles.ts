@@ -20,7 +20,7 @@ export const Container = styled.main`
     padding: 0.7rem;
     margin: 2rem 0.2rem 4rem auto;
     height: 40px;
-    width: 180px;
+    max-width: 180px;
     border-radius: 10px;
     color: white;
     cursor: pointer;
@@ -60,7 +60,7 @@ export const Content = styled.div`
     color: white;
 
     width: 200px;
-    background-color: #fe5949;
+    background-color: var(--background);
     border-radius: 10px;
   }
 
@@ -122,7 +122,7 @@ export const Content = styled.div`
     }
 
     strong {
-      display: none;
+      display: flex;
       align-items: center;
       gap: 0.3rem;
       position: absolute;

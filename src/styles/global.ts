@@ -9,7 +9,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-    --background: #FF8266;
+    --background: #fe5949;
+    --red: #E4594E;
     --padrao: #FFC368;
     --letter: #87A634;
     --details: #FFE4B1;
@@ -44,6 +45,8 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   a {
+    display: inline-flex;
+    color: inherit;
     text-decoration: none;
   }
 
@@ -72,6 +75,6 @@ export const GlobalStyles = createGlobalStyle`
   } 
 
   .hidden {
-    display: none;
+    display: none  !important;
   }
 `;

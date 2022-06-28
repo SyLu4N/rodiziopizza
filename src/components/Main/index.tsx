@@ -51,7 +51,7 @@ export function Main(): JSX.Element {
     setListParticipantes(newParticipantes);
 
     svg.classList.add('hidden');
-    strong.setAttribute('id', 'flex');
+    strong.classList.remove('hidden');
   }
 
   function handleCancel(index: number) {
@@ -65,7 +65,7 @@ export function Main(): JSX.Element {
     newParticipantes[index].nome = name;
     setListParticipantes(newParticipantes);
 
-    strong.removeAttribute('id');
+    strong.classList.add('hidden');
     svg.classList.remove('hidden');
   }
 
@@ -95,7 +95,7 @@ export function Main(): JSX.Element {
 
     newParticipantes[currentIndex].nome = name;
     setListParticipantes(newParticipantes);
-    strong.removeAttribute('id');
+    strong.classList.add('hidden');
     svg.classList.remove('hidden');
   }
 
@@ -130,7 +130,7 @@ export function Main(): JSX.Element {
                     className={`svg${index}`}
                   />
 
-                  <strong className={`participante${index}`}>
+                  <strong className={`participante${index} hidden`}>
                     <p className="excluir" onClick={() => handleDelete(index)}>
                       ✔
                     </p>

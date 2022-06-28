@@ -8,12 +8,16 @@ import { Container, Content, ContentRank } from './styles';
 import { Text } from './Text';
 
 export function ResultadoMain() {
-  const { participantes } = useContext(ParticipantesContext);
+  const { participantes, setParticipante } = useContext(ParticipantesContext);
 
+  const [reset, setReset] = useState<boolean>(false);
   const [newParticipantes, setNewParticipantes] =
     useState<Participante[]>(participantes);
+  let contador = 0;
 
   useEffect(() => {
+    if (reset) return;
+
     const participanteStorage = participantes.sort(
       (x, y) => y.contador - x.contador
     );
@@ -23,11 +27,20 @@ export function ResultadoMain() {
 
   let rank = 1;
 
+  function resetList() {
+    contador++;
+
+    if (contador === newParticipantes.length) {
+      setReset(true);
+      setParticipante([]);
+    }
+  }
+
   return (
     <Container>
       <img className="totem" src="/assets/totem.svg" alt="Totem de trófeus" />
 
-      <Content>
+      <Content onLoad={resetList}>
         {newParticipantes.map((participante, index) => (
           <ContentRank key={index}>
             <Rank rank={rank++} />
@@ -37,7 +50,7 @@ export function ResultadoMain() {
         ))}
       </Content>
 
-      <Details />
+      <Details participantes={newParticipantes} />
     </Container>
   );
 }
