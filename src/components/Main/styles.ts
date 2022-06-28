@@ -65,7 +65,6 @@ export const ContentStart = styled.div`
     max-width: 400px;
     height: 30px;
     color: white;
-    margin-top: -6rem;
     font-size: 1.5rem;
     font-family: 'Alegreya';
 
