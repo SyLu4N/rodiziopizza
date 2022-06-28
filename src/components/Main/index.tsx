@@ -160,7 +160,7 @@ export function Main(): JSX.Element {
             <img src="/assets/rodiziopizza.svg" alt="Pizza Inteira" />
           </div>
           <button className="start" onClick={modelResultOpen}>
-            Começar Rodízio <AiOutlineSend />
+            <p>Começar Rodízio</p> <AiOutlineSend />
           </button>
         </ContentStart>
       )}

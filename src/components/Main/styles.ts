@@ -67,14 +67,25 @@ export const ContentStart = styled.div`
     color: white;
     font-size: 1.5rem;
     font-family: 'Alegreya';
+    position: relative;
 
     border-radius: 10px;
     background-color: var(--letter);
     cursor: pointer;
     transition: all 300ms;
 
+    svg {
+      transition: all 300ms;
+      right: 18%;
+      position: absolute;
+    }
+
     &:hover {
       filter: brightness(1.05);
+
+      svg {
+        right: 16%;
+      }
     }
   }
 `;
