@@ -8,7 +8,7 @@ import { Finish } from '../Finish';
 import { Header } from '../Header';
 import { ModalAdd } from '../ModalAdd';
 import { Participante, ParticipantesContext } from '../participantesContext';
-import { Container, Content } from './styles';
+import { Container, Content, ContentStart } from './styles';
 
 export function Main(): JSX.Element {
   const { participantes, setParticipante } = useContext(ParticipantesContext);
@@ -154,9 +154,14 @@ export function Main(): JSX.Element {
           <Finish />
         </>
       ) : (
-        <button className="start" onClick={modelResultOpen}>
-          Começar Rodízio
-        </button>
+        <ContentStart>
+          <div>
+            <img src="/assets/rodiziopizza.svg" alt="Pizza Inteira" />
+          </div>
+          <button className="start" onClick={modelResultOpen}>
+            Começar Rodízio
+          </button>
+        </ContentStart>
       )}
     </Container>
   );

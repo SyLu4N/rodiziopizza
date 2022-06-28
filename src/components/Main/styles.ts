@@ -8,6 +8,7 @@ export const Container = styled.main`
 
   background-image: url('/assets/backgroundPink.png');
   background-size: cover;
+  height: 100vh;
   position: relative;
   padding-bottom: 2rem;
 
@@ -31,13 +32,43 @@ export const Container = styled.main`
     }
   }
 
-  .start {
-    width: 100%;
-    font-size: 1.2rem;
-  }
-
   .finish {
     margin-bottom: auto;
+  }
+`;
+
+export const ContentStart = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+
+  div {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    img {
+      width: 400px;
+    }
+  }
+
+  .start {
+    width: 100%;
+    max-width: 400px;
+    height: 30px;
+    color: white;
+    margin: auto;
+    font-size: 1.5rem;
+
+    border-radius: 10px;
+    background-color: var(--letter);
+    cursor: pointer;
+    transition: all 300ms;
+
+    &:hover {
+      filter: brightness(1.05);
+    }
   }
 `;
 
