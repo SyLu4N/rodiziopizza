@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { AiOutlineSend } from 'react-icons/ai';
 
 import Head from 'next/head';
 
@@ -159,7 +160,7 @@ export function Main(): JSX.Element {
             <img src="/assets/rodiziopizza.svg" alt="Pizza Inteira" />
           </div>
           <button className="start" onClick={modelResultOpen}>
-            Começar Rodízio
+            Começar Rodízio <AiOutlineSend />
           </button>
         </ContentStart>
       )}

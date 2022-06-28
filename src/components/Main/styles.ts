@@ -41,7 +41,10 @@ export const ContentStart = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   height: 100%;
+  width: 100%;
+  padding: 1rem;
 
   div {
     display: flex;
@@ -54,12 +57,17 @@ export const ContentStart = styled.div`
   }
 
   .start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
     max-width: 400px;
     height: 30px;
     color: white;
-    margin: auto;
+    margin-top: -6rem;
     font-size: 1.5rem;
+    font-family: 'Alegreya';
 
     border-radius: 10px;
     background-color: var(--letter);
