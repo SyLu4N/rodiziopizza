@@ -1,7 +1,5 @@
 # Learning JavaScript
 
-Projeto com foco nos estudos
-
 ✓ Working With Javascript! <br>
 ✓ Working With TypeScript! <br>
 ✓ Working With React! <br>
