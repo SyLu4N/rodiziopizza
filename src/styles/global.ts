@@ -22,8 +22,21 @@ export const GlobalStyles = createGlobalStyle`
       src: url('/assets/alegreya-sans-sc-black.ttf');
     }
 
+    overflow-x: hidden;
     scroll-behavior: smooth;
-    font-family: 'Alegreya';    
+    font-family: 'Alegreya';
+
+    
+    &::-webkit-scrollbar{
+      width: 12px;
+      background: #E1432F;
+    }
+
+    &::-webkit-scrollbar-thumb{
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      background-color: #E1433F;
+    } 
+    
   }
 
   @media (max-width: 1000px) {

@@ -1,18 +1,21 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineSend } from 'react-icons/ai';
 
 import Head from 'next/head';
 
+import {
+  Participante,
+  useParticipantes,
+} from '../../hooks/useParticipantesContext';
 import { Buttons } from '../Buttons';
 import { Contador } from '../Contador';
 import { Finish } from '../Finish';
 import { Header } from '../Header';
 import { ModalAdd } from '../ModalAdd';
-import { Participante, ParticipantesContext } from '../participantesContext';
 import { Container, Content, ContentStart } from './styles';
 
 export function Main(): JSX.Element {
-  const { participantes, setParticipante } = useContext(ParticipantesContext);
+  const { participantes, setParticipante } = useParticipantes();
   const [listParticipantes, setListParticipantes] = useState<Participante[]>(
     []
   );
@@ -160,7 +163,7 @@ export function Main(): JSX.Element {
             <img src="/assets/rodiziopizza.svg" alt="Pizza Inteira" />
           </div>
           <button className="start" onClick={modelResultOpen}>
-            <p>Começar Rodízio</p> <AiOutlineSend />
+            <a href="#header">Começar Rodízio</a> <AiOutlineSend />
           </button>
         </ContentStart>
       )}

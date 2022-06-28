@@ -1,6 +1,6 @@
 import { IoMdArrowRoundBack } from 'react-icons/io';
 
-import { Participante } from '../../participantesContext';
+import { Participante } from '../../../hooks/useParticipantesContext';
 import { Back, Container, Content } from './styles';
 
 interface DetailsProps {
@@ -54,7 +54,7 @@ export function Details({ participantes }: DetailsProps) {
       <Back>
         <a href="/">
           <IoMdArrowRoundBack size={25} />
-          <p>Voltar</p>
+          <p>Novo Rodízio</p>
         </a>
       </Back>
     </Container>

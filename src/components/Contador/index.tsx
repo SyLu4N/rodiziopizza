@@ -1,4 +1,4 @@
-import { Participante } from '../participantesContext';
+import { Participante } from '../../hooks/useParticipantesContext';
 import { Container } from './styles';
 
 interface ContadorProps {

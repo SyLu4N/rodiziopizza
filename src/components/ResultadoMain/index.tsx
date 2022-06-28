@@ -1,6 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Participante, ParticipantesContext } from '../participantesContext';
+import {
+  Participante,
+  useParticipantes,
+} from '../../hooks/useParticipantesContext';
 import { Contador } from './Contador';
 import { Details } from './Details';
 import { Rank } from './Rank';
@@ -8,7 +11,7 @@ import { Container, Content, ContentRank } from './styles';
 import { Text } from './Text';
 
 export function ResultadoMain() {
-  const { participantes, setParticipante } = useContext(ParticipantesContext);
+  const { participantes, setParticipante } = useParticipantes();
 
   const [reset, setReset] = useState<boolean>(false);
   const [newParticipantes, setNewParticipantes] =

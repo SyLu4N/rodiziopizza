@@ -74,7 +74,7 @@ export const Back = styled.div`
   justify-content: center;
 
   a {
-    max-width: 100px;
+    max-width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;

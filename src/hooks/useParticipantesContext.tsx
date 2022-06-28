@@ -1,4 +1,10 @@
-import React, { createContext, useEffect, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useEffect,
+  useState,
+  ReactNode,
+  useContext,
+} from 'react';
 
 interface participanteProvider {
   children: ReactNode;
@@ -17,7 +23,7 @@ interface ParticipantesProps {
   setParticipante: (value: Participante[]) => void;
 }
 
-export const ParticipantesContext = createContext<ParticipantesProps>(
+const ParticipantesContext = createContext<ParticipantesProps>(
   {} as ParticipantesProps
 );
 
@@ -53,4 +59,10 @@ export function ParticipantesProvider({ children }: participanteProvider) {
       {children}
     </ParticipantesContext.Provider>
   );
+}
+
+export function useParticipantes() {
+  const context = useContext(ParticipantesContext);
+
+  return context;
 }

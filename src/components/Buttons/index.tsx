@@ -1,6 +1,7 @@
-import { useContext } from 'react';
-
-import { Participante, ParticipantesContext } from '../participantesContext';
+import {
+  Participante,
+  useParticipantes,
+} from '../../hooks/useParticipantesContext';
 import { Container } from './styles';
 
 interface ButtonsProps {
@@ -16,7 +17,7 @@ export function Buttons({
   index,
   clearRemove,
 }: ButtonsProps) {
-  const { setParticipante } = useContext(ParticipantesContext);
+  const { setParticipante } = useParticipantes();
 
   function handlePlus() {
     clearRemove(index);
