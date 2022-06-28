@@ -14,7 +14,7 @@ Projeto com foco nos estudos
  <h3>📚 Funcionamento</h3>
 
  <h6 align="center">
-   <a href="https://www.linkedin.com/feed/update/urn:li:activity:6933508663361843200/">
+   <a href="https://rodiziopizza.vercel.app/">
     <img src="./apresentacao/gif.gif" alt="Funcionamento" />
    </a>
  </h6>
@@ -22,7 +22,10 @@ Projeto com foco nos estudos
 
  <h3>📚 Código</h3>
  <h6 align="center">
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6933508663361843200/">
+    <a href="https://rodiziopizza.vercel.app/">
       <img src="./apresentacao/vsCode.gif" alt="Código da aplicação" />
     </a>
   </h6>
+
+  <h3>Link para o site</h3>
+  <p>https://rodiziopizza.vercel.app/</p>
