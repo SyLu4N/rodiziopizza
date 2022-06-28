@@ -10,7 +10,7 @@ Projeto com foco nos estudos
 ✓ Working With React-Hooks! <br>
 ✓ Working With React-Icons! <br>
 
- <h1>✅Projects</h1>
+ <h1>✅Project</h1>
  <h3>📚 Funcionamento</h3>
 
  <h6 align="center">
