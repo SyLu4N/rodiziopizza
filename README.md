@@ -27,5 +27,7 @@ Projeto com foco nos estudos
     </a>
   </h6>
 
+  <h2></h2>
+
   <h3>Link para o site</h3>
   <p>https://rodiziopizza.vercel.app/</p>
