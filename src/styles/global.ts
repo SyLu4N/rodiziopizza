@@ -63,6 +63,16 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+  .animationContadorUp {
+    transition: all 200ms;
+    margin-top: 200%;
+  }
+
+  .animationContadorDow {
+    transition: all 200ms;
+    margin-top: -200%;
+  }
+
   .overlayModal {
     display: flex;
     justify-content: center;

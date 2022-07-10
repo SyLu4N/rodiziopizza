@@ -18,24 +18,34 @@ export function Buttons({
   clearRemove,
 }: ButtonsProps) {
   const { setParticipante } = useParticipantes();
+  const animation = document.querySelector(
+    `.anima${index}`
+  ) as HTMLParagraphElement;
 
   function handlePlus() {
     clearRemove(index);
+    animation?.classList.add('animationContadorUp');
 
-    const newListParticipantes = [...listParticipantes];
-    newListParticipantes[index].contador++;
-    setListParticipantes(newListParticipantes);
-    setParticipante(newListParticipantes);
+    setTimeout(() => {
+      const newListParticipantes = [...listParticipantes];
+      newListParticipantes[index].contador++;
+      setListParticipantes(newListParticipantes);
+      setParticipante(newListParticipantes);
+      animation?.classList.remove('animationContadorUp');
+    }, 400);
   }
 
   function handleMinus() {
     clearRemove(index);
+    animation?.classList.add('animationContadorDow');
 
-    const newListParticipantes = [...listParticipantes];
-    if (newListParticipantes[index].contador === 0) return;
-    newListParticipantes[index].contador--;
-    setListParticipantes(newListParticipantes);
-    setParticipante(newListParticipantes);
+    setTimeout(() => {
+      const newListParticipantes = [...listParticipantes];
+      newListParticipantes[index].contador--;
+      setListParticipantes(newListParticipantes);
+      setParticipante(newListParticipantes);
+      animation?.classList.remove('animationContadorDow');
+    }, 400);
   }
 
   return (

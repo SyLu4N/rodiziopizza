@@ -121,7 +121,7 @@ export function Main(): JSX.Element {
           <Content>
             {listParticipantes.map((participante, index) => (
               <div key={index} className="contentPart">
-                <Contador participante={participante} />
+                <Contador participante={participante} index={index} />
                 <div className="contentName">
                   <div className="contentText">
                     <p className="text">{participante.nome}</p>
