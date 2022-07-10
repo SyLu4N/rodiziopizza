@@ -37,10 +37,13 @@ export function Buttons({
 
   function handleMinus() {
     clearRemove(index);
+    const newListParticipantes = [...listParticipantes];
+
+    if (newListParticipantes[index].contador === 0) return;
+
     animation?.classList.add('animationContadorDow');
 
     setTimeout(() => {
-      const newListParticipantes = [...listParticipantes];
       newListParticipantes[index].contador--;
       setListParticipantes(newListParticipantes);
       setParticipante(newListParticipantes);
