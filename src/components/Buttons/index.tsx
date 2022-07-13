@@ -18,11 +18,14 @@ export function Buttons({
   clearRemove,
 }: ButtonsProps) {
   const { setParticipante } = useParticipantes();
-  const animation = document.querySelector(
-    `.anima${index}`
-  ) as HTMLParagraphElement;
+
+  const timeAnimation = 250;
 
   function handlePlus() {
+    const animation = document.querySelector(
+      `.anima${index}`
+    ) as HTMLParagraphElement;
+
     clearRemove(index);
     animation?.classList.add('animationContadorUp');
 
@@ -32,10 +35,14 @@ export function Buttons({
       setListParticipantes(newListParticipantes);
       setParticipante(newListParticipantes);
       animation?.classList.remove('animationContadorUp');
-    }, 400);
+    }, timeAnimation);
   }
 
   function handleMinus() {
+    const animation = document.querySelector(
+      `.anima${index}`
+    ) as HTMLParagraphElement;
+
     clearRemove(index);
     const newListParticipantes = [...listParticipantes];
 
@@ -48,7 +55,7 @@ export function Buttons({
       setListParticipantes(newListParticipantes);
       setParticipante(newListParticipantes);
       animation?.classList.remove('animationContadorDow');
-    }, 400);
+    }, timeAnimation);
   }
 
   return (

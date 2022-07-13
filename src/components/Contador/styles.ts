@@ -26,7 +26,10 @@ export const ContentContador = styled.div`
   transition: all 300ms;
 
   p {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     font-size: 3.5rem;
     color: var(--letter);
