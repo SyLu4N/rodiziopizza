@@ -36,7 +36,7 @@ export const Content = styled.div`
     }
   }
 
-  .finishAsk {
+  .pushTextAsk {
     position: relative;
 
     margin-top: -5rem;

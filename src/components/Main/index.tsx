@@ -9,9 +9,9 @@ import {
 } from '../../hooks/useParticipantesContext';
 import { Buttons } from '../Buttons';
 import { Contador } from '../Contador';
-import { Finish } from '../Finish';
 import { Header } from '../Header';
 import { ModalAdd } from '../ModalAdd';
+import { PushText } from '../PushText';
 import { Container, Content, ContentStart } from './styles';
 
 export function Main(): JSX.Element {
@@ -155,7 +155,10 @@ export function Main(): JSX.Element {
           <a className="new" href="#header" onClick={modelResultOpen}>
             + Novo participante
           </a>
-          <Finish />
+          <PushText
+            textMain="Finalizar"
+            textPush="Deseja finalizar o rodízio?"
+          />
         </>
       ) : (
         <ContentStart>

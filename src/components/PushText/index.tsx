@@ -4,23 +4,28 @@ import Link from 'next/link';
 
 import { Container, Confirm, Content } from './styles';
 
-export function Finish() {
+interface PushTextProps {
+  textMain: string;
+  textPush: string;
+}
+
+export function PushText({ textMain, textPush }: PushTextProps) {
   const confirmRef = useRef<HTMLDivElement>(null);
   const ContentRef = useRef<HTMLDivElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
-  const finishAskRef = useRef<HTMLHeadingElement>(null);
+  const pushTextAskRef = useRef<HTMLHeadingElement>(null);
 
   function askReset() {
-    if (!finishAskRef.current) return;
+    if (!pushTextAskRef.current) return;
 
-    finishAskRef.current.style.marginTop = '0';
+    pushTextAskRef.current.style.marginTop = '0';
 
     setTimeout(() => {
       confirmRef.current?.classList.remove('hidden');
     }, 200);
 
     document.addEventListener('click', function ask(e: any) {
-      if (!finishAskRef.current) return;
+      if (!pushTextAskRef.current) return;
 
       if (
         e.target.parentNode !== divRef.current &&
@@ -28,7 +33,7 @@ export function Finish() {
       ) {
         document.removeEventListener('click', ask);
         confirmRef.current?.classList.add('hidden');
-        finishAskRef.current.style.marginTop = '-5rem';
+        pushTextAskRef.current.style.marginTop = '-5rem';
       }
     });
   }
@@ -36,10 +41,10 @@ export function Finish() {
   return (
     <Container ref={divRef}>
       <Content ref={ContentRef}>
-        <h2 className="finishAsk" ref={finishAskRef}>
-          Deseja finalizar o rodízio?
+        <h2 className="pushTextAsk" ref={pushTextAskRef}>
+          {textPush}
         </h2>
-        <h2 onClick={askReset}>Finalizar</h2>
+        <h2 onClick={askReset}>{textMain}</h2>
       </Content>
       <Confirm>
         <strong className="hidden" ref={confirmRef}>
