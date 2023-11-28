@@ -7,7 +7,7 @@ interface ConfigProvider {
 
 type ParticipanteData = {
   participantes: Participante[] | null;
-  setParticipantes: (value: Participante[]) => void;
+  setParticipantes: (value: Participante[] | null) => void;
 
   criarParticipante: () => void;
 };
@@ -21,12 +21,15 @@ export function ParticipantesProvider({ children }: ConfigProvider) {
 
   useEffect(() => {
     const participantesJSON = localStorage.getItem('PARTICIPANTES');
+    const newParticipantes = JSON.parse(participantesJSON ?? '');
 
-    if (participantesJSON && participantesJSON !== null) {
-      return setParticipantes(JSON.parse(participantesJSON));
+    if (!newParticipantes || !newParticipantes.lenght) {
+      return setParticipantes([
+        { id: Math.random().toFixed(5), nome: '', fatias: 0 },
+      ]);
     }
 
-    setParticipantes([{ id: Math.random().toFixed(5), nome: '', fatias: 0 }]);
+    setParticipantes(newParticipantes);
   }, []);
 
   useEffect(() => {
