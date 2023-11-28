@@ -44,13 +44,16 @@ export function PushText({ textMain, textPush }: PushTextProps) {
         <h2 className="pushTextAsk" ref={pushTextAskRef}>
           {textPush}
         </h2>
+
         <h2 onClick={askReset}>{textMain}</h2>
       </Content>
+
       <Confirm>
         <strong className="hidden" ref={confirmRef}>
           <Link href="/resultado">
             <a className="excluir">✔</a>
           </Link>
+
           <p className="cancelar">X</p>
         </strong>
       </Confirm>

@@ -4,6 +4,8 @@ export const Container = styled.main`
   background-image: url('/assets/backgroundGreen.png');
   background-size: cover;
 
+  min-height: 100vh;
+
   padding: 1rem 0;
   padding-bottom: 5rem;
 
@@ -11,7 +13,7 @@ export const Container = styled.main`
     display: block;
     margin: auto;
     width: 150px;
-    margin-bottom: 1.1rem;
+    margin-bottom: 2rem;
   }
 `;
 

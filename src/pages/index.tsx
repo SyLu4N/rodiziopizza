@@ -1,9 +1,36 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 
-import { Main } from '../components/Main';
+import { Participantes } from '../components/participantes';
+import { PushText } from '../components/PushText';
+import { useParticipantes } from '../hooks/useParticipantes';
+import { Container } from './styles';
 
 const Home: NextPage = () => {
-  return <Main />;
+  const { participantes, criarParticipante } = useParticipantes();
+
+  return (
+    <Container>
+      <Head>
+        <title>RodizioPizza | Home</title>
+      </Head>
+      <h1>Hoje vou dar prejuízo!</h1>
+
+      {participantes?.map((participante, index) => (
+        <Participantes
+          participante={participante}
+          index={index}
+          key={participante.id}
+        />
+      ))}
+
+      <a className="new" onClick={() => criarParticipante()}>
+        + Novo participante
+      </a>
+
+      <PushText textMain="Finalizar" textPush="Deseja finalizar o rodízio?" />
+    </Container>
+  );
 };
 
 export default Home;

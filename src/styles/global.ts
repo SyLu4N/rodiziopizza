@@ -26,6 +26,11 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     font-family: 'Alegreya';
 
+    body {
+      background-image: url('/assets/backgroundPink.png');
+      background-size: cover;
+    }
+
     
     &::-webkit-scrollbar{
       width: 12px;

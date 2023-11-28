@@ -1,4 +1,4 @@
-import { Participante } from '../../hooks/useParticipantesContext';
+import { Participante } from '../../@types/participantes';
 import { Container, ContentContador } from './styles';
 
 interface ContadorProps {
@@ -7,17 +7,17 @@ interface ContadorProps {
 }
 
 export function Contador({ participante, index }: ContadorProps) {
+  const fatias = participante.fatias ?? 0;
+
   return (
     <Container className="contador">
-      <div className="teste">
+      <div>
         <ContentContador>
-          <p className={`anima${index}`}>{participante.contador + 1}</p>
-          <p>{participante.contador}</p>
-          {participante.contador > 0 ? (
-            <p>{participante.contador - 1}</p>
-          ) : (
-            <p>{participante.contador}</p>
-          )}
+          <p className={`anima${index}`}>{fatias + 1}</p>
+
+          <p>{fatias}</p>
+
+          {fatias > 0 ? <p>{fatias - 1}</p> : <p>{fatias}</p>}
         </ContentContador>
       </div>
     </Container>

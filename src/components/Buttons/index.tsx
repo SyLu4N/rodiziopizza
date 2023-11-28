@@ -1,67 +1,62 @@
-import {
-  Participante,
-  useParticipantes,
-} from '../../hooks/useParticipantesContext';
+import { useParticipantes } from '../../hooks/useParticipantes';
 import { Container } from './styles';
 
 interface ButtonsProps {
-  listParticipantes: Participante[];
-  setListParticipantes: (value: Participante[]) => void;
   index: number;
-  clearRemove: (index: number) => void;
 }
 
-export function Buttons({
-  listParticipantes,
-  setListParticipantes,
-  index,
-  clearRemove,
-}: ButtonsProps) {
-  const { setParticipante } = useParticipantes();
+export function Buttons({ index }: ButtonsProps) {
+  const { participantes, setParticipantes } = useParticipantes();
 
   const timeAnimation = 250;
 
-  function handlePlus() {
+  function aumentarFatias() {
     const animation = document.querySelector(
       `.anima${index}`
     ) as HTMLParagraphElement;
-
-    clearRemove(index);
     animation?.classList.add('animationContadorUp');
 
+    const newParticipantes = [...participantes];
+    const participante = newParticipantes[index];
+
     setTimeout(() => {
-      const newListParticipantes = [...listParticipantes];
-      newListParticipantes[index].contador++;
-      setListParticipantes(newListParticipantes);
-      setParticipante(newListParticipantes);
+      participante.fatias = (participante?.fatias ?? 0) + 1;
+
+      participantes[index] = participante;
+      setParticipantes(newParticipantes);
+
       animation?.classList.remove('animationContadorUp');
     }, timeAnimation);
   }
 
-  function handleMinus() {
+  function diminuirFatias() {
     const animation = document.querySelector(
       `.anima${index}`
     ) as HTMLParagraphElement;
 
-    clearRemove(index);
-    const newListParticipantes = [...listParticipantes];
+    const newListParticipantes = [...participantes];
 
-    if (newListParticipantes[index].contador === 0) return;
+    if (newListParticipantes[index].fatias === 0) return;
 
     animation?.classList.add('animationContadorDow');
 
+    const newParticipantes = [...participantes];
+    const participante = newParticipantes[index];
+
     setTimeout(() => {
-      newListParticipantes[index].contador--;
-      setListParticipantes(newListParticipantes);
-      setParticipante(newListParticipantes);
+      if (!participante.fatias) return;
+      participante.fatias -= 1;
+
+      participantes[index] = participante;
+      setParticipantes(newParticipantes);
       animation?.classList.remove('animationContadorDow');
     }, timeAnimation);
   }
 
   return (
     <Container className="containerButtons">
-      <img src="/assets/plus.svg" onClick={handlePlus} />
-      <img src="/assets/minus.svg" onClick={handleMinus} />
+      <img src="/assets/plus.svg" onClick={aumentarFatias} />
+      <img src="/assets/minus.svg" onClick={diminuirFatias} />
     </Container>
   );
 }

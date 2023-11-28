@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { IoIosClose } from 'react-icons/io';
 import Modal from 'react-modal';
 
-import { useParticipantes } from '../../hooks/useParticipantesContext';
+import { useParticipantes } from '../../hooks/useParticipantes';
 import { Container } from './styles';
 
 interface ModalAddProps {
@@ -11,7 +11,7 @@ interface ModalAddProps {
 }
 
 export function ModalAdd({ isModelResult, modelResultClose }: ModalAddProps) {
-  const { createParticipante } = useParticipantes();
+  const { criarParticipante } = useParticipantes();
   const [name, setName] = useState('');
 
   async function sendForm(e: FormEvent) {
@@ -21,7 +21,7 @@ export function ModalAdd({ isModelResult, modelResultClose }: ModalAddProps) {
       nome: name,
     };
 
-    createParticipante(data);
+    criarParticipante(data);
     modelResultClose();
   }
 

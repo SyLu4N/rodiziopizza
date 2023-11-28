@@ -1,6 +1,6 @@
 import { IoMdArrowRoundBack } from 'react-icons/io';
 
-import { Participante } from '../../../hooks/useParticipantesContext';
+import { Participante } from '../../../@types/participantes';
 import { Back, Container, Content } from './styles';
 
 interface DetailsProps {
@@ -9,7 +9,7 @@ interface DetailsProps {
 
 export function Details({ participantes }: DetailsProps) {
   const fatias = participantes.reduce(
-    (ac, participante) => participante.contador + ac,
+    (ac, participante) => (participante.fatias ?? 0) + ac,
     0
   );
   const medias = (fatias / participantes.length).toFixed(0);
@@ -51,6 +51,7 @@ export function Details({ participantes }: DetailsProps) {
           <span>{devoradores}</span>
         </div>
       </Content>
+
       <Back>
         <a href="/">
           <IoMdArrowRoundBack size={25} />

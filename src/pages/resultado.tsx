@@ -8,6 +8,7 @@ export default function Resultado() {
       <Head>
         <title>RodizioPizza | Resultado</title>
       </Head>
+
       <ResultadoMain />
     </>
   );
