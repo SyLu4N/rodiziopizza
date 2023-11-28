@@ -11,15 +11,15 @@ export function Contador({ participante, index }: ContadorProps) {
 
   return (
     <Container className="contador">
-      <div>
-        <ContentContador>
-          <p className={`anima${index}`}>{fatias + 1}</p>
+      <img src="/assets/tomato.svg" />
 
-          <p>{fatias}</p>
+      <ContentContador>
+        <p className={`anima${index}`}>{fatias + 1}</p>
 
-          {fatias > 0 ? <p>{fatias - 1}</p> : <p>{fatias}</p>}
-        </ContentContador>
-      </div>
+        <p>{fatias}</p>
+
+        {fatias > 0 ? <p>{fatias - 1}</p> : <p>{fatias}</p>}
+      </ContentContador>
     </Container>
   );
 }

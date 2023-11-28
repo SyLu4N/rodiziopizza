@@ -16,6 +16,8 @@ export function Buttons({ index }: ButtonsProps) {
     ) as HTMLParagraphElement;
     animation?.classList.add('animationContadorUp');
 
+    if (!participantes) return;
+
     const newParticipantes = [...participantes];
     const participante = newParticipantes[index];
 
@@ -33,6 +35,8 @@ export function Buttons({ index }: ButtonsProps) {
     const animation = document.querySelector(
       `.anima${index}`
     ) as HTMLParagraphElement;
+
+    if (!participantes) return;
 
     const newListParticipantes = [...participantes];
 

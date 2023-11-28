@@ -5,14 +5,20 @@ export const Container = styled.span`
   align-items: center;
   justify-content: center;
 
-  background-image: url('/assets/tomato.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 90px;
-  min-width: 90px;
+  width: 90px;
   margin-right: -2rem;
+
+  position: relative;
   z-index: 1;
+
+  img {
+    width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    width: 70px;
+    background-size: unset;
+  }
 `;
 
 export const ContentContador = styled.div`
@@ -24,6 +30,8 @@ export const ContentContador = styled.div`
   height: 70px;
   overflow: hidden;
   transition: all 300ms;
+
+  position: absolute;
 
   p {
     display: flex;
@@ -42,5 +50,13 @@ export const ContentContador = styled.div`
     -webkit-text-stroke-color: #fff;
     margin-bottom: 5px;
     margin-left: 5px;
+  }
+
+  @media (max-width: 500px) {
+    height: 50px;
+
+    p {
+      font-size: 2.7rem;
+    }
   }
 `;

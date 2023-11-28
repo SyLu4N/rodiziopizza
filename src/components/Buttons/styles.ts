@@ -19,4 +19,10 @@ export const Container = styled.div`
       filter: brightness(0.95);
     }
   }
+
+  @media (max-width: 500px) {
+    img {
+      width: 40px;
+    }
+  }
 `;

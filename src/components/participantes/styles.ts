@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Content = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 
   position: relative;
 
@@ -13,13 +14,10 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
 
-    font-size: 2.5rem;
-
     position: relative;
     background-color: var(--details);
     box-shadow: 5px 6px var(--padrao);
 
-    margin-top: 1rem;
     padding: 0 30px 0 30px;
     min-width: 400px;
     height: 55px;
@@ -67,6 +65,21 @@ export const Content = styled.div`
 
     .excluir {
       background-color: var(--letter);
+    }
+  }
+
+  @media (max-width: 500px) {
+    margin-top: 1rem;
+
+    .contentName {
+      font-size: 1rem;
+      min-width: 200px;
+      height: 35px;
+      padding: 0 10px 0 20px;
+
+      img {
+        width: 15px;
+      }
     }
   }
 `;

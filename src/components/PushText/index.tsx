@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import Link from 'next/link';
 
-import { Container, Confirm, Content } from './styles';
+import { Container, Confirm } from './styles';
 
 interface PushTextProps {
   textMain: string;
@@ -10,43 +10,45 @@ interface PushTextProps {
 }
 
 export function PushText({ textMain, textPush }: PushTextProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const textRef = useRef<HTMLParagraphElement>(null);
+
   const confirmRef = useRef<HTMLDivElement>(null);
-  const ContentRef = useRef<HTMLDivElement>(null);
-  const divRef = useRef<HTMLDivElement>(null);
-  const pushTextAskRef = useRef<HTMLHeadingElement>(null);
 
   function askReset() {
-    if (!pushTextAskRef.current) return;
-
-    pushTextAskRef.current.style.marginTop = '0';
+    textRef?.current?.classList.add('activeAsk');
 
     setTimeout(() => {
       confirmRef.current?.classList.remove('hidden');
     }, 200);
 
     document.addEventListener('click', function ask(e: any) {
-      if (!pushTextAskRef.current) return;
+      const parentNode = e.target.parentNode;
 
       if (
-        e.target.parentNode !== divRef.current &&
-        e.target.parentNode !== ContentRef.current
+        parentNode !== containerRef.current &&
+        parentNode !== contentRef.current
       ) {
         document.removeEventListener('click', ask);
+
+        textRef?.current?.classList.remove('activeAsk');
+
         confirmRef.current?.classList.add('hidden');
-        pushTextAskRef.current.style.marginTop = '-5rem';
       }
     });
   }
 
   return (
-    <Container ref={divRef}>
-      <Content ref={ContentRef}>
-        <h2 className="pushTextAsk" ref={pushTextAskRef}>
-          {textPush}
-        </h2>
+    <Container ref={containerRef}>
+      <div className="content" ref={contentRef}>
+        <p>{textPush}</p>
 
-        <h2 onClick={askReset}>{textMain}</h2>
-      </Content>
+        <p onClick={askReset} className="fix" ref={textRef}>
+          {textMain}
+        </p>
+      </div>
 
       <Confirm>
         <strong className="hidden" ref={confirmRef}>

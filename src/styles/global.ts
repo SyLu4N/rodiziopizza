@@ -78,29 +78,9 @@ export const GlobalStyles = createGlobalStyle`
     margin-top: -200%;
   }
 
-  .overlayModal {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-
-    padding-bottom: 150vmax;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 2;
+  .mt-5rem {
+    margin-top: -5rem;
   }
-
-  .modalContent {
-    display: flex;
-    align-items: center;
-    height: 200px;
-    position: relative;
-    padding: 1rem 2rem;
-    background: var(--colorbackground);
-    border-radius: 0.25rem;
-  } 
 
   .hidden {
     display: none  !important;

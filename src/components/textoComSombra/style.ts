@@ -47,4 +47,12 @@ export const Container = styled.div`
     color: white;
     text-shadow: 2px 2px #91b23b;
   }
+
+  @media (max-width: 500px) {
+    p,
+    input {
+      font-size: 1.7rem;
+      height: 30px;
+    }
+  }
 `;

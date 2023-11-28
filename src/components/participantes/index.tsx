@@ -55,6 +55,7 @@ export function Participantes({ index, participante }: ParticipantesProps) {
     newParticipantes[index].nome = nome;
 
     setParticipantes(newParticipantes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nome]);
 
   return (
