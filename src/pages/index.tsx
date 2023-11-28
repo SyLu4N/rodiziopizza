@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { Participantes } from '../components/participantes';
 import { PushText } from '../components/PushText';
 import { useParticipantes } from '../hooks/useParticipantes';
-import { Container } from './styles';
+import { Container } from '../styles/home';
 
 const Home: NextPage = () => {
   const { participantes, criarParticipante } = useParticipantes();
