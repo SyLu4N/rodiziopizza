@@ -6,10 +6,6 @@ export const Container = styled.main`
     src: url('/assets/Carlson.ttf');
   }
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
   min-height: 100vh;
   position: relative;
   max-width: 900px;

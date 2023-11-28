@@ -13,6 +13,7 @@ export const Content = styled.div`
   .contentName {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     position: relative;
     background-color: var(--details);
@@ -43,7 +44,7 @@ export const Content = styled.div`
     font-size: 20px;
 
     position: absolute;
-    right: 8.5em;
+    margin-left: -1.2rem;
     bottom: -20px;
 
     p {
@@ -79,6 +80,16 @@ export const Content = styled.div`
 
       img {
         width: 15px;
+      }
+
+      strong {
+        bottom: -15px;
+
+        p {
+          font-size: 14px;
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }

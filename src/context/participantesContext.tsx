@@ -22,7 +22,7 @@ export function ParticipantesProvider({ children }: ConfigProvider) {
   useEffect(() => {
     const participantesJSON = localStorage.getItem('PARTICIPANTES');
 
-    if (participantesJSON && participantesJSON === null) {
+    if (participantesJSON && participantesJSON !== null) {
       return setParticipantes(JSON.parse(participantesJSON));
     }
 
@@ -30,7 +30,7 @@ export function ParticipantesProvider({ children }: ConfigProvider) {
   }, []);
 
   useEffect(() => {
-    if (participantes) return;
+    if (!participantes) return;
 
     localStorage.setItem('PARTICIPANTES', JSON.stringify(participantes));
   }, [participantes]);

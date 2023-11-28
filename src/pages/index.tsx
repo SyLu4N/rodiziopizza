@@ -15,21 +15,19 @@ const Home: NextPage = () => {
         <title>RodizioPizza | Home</title>
       </Head>
 
-      <div>
-        <h1>Hoje vou dar prejuízo!</h1>
+      <h1>Hoje vou dar prejuízo!</h1>
 
-        {participantes?.map((participante, index) => (
-          <Participantes
-            participante={participante}
-            index={index}
-            key={participante.id}
-          />
-        ))}
+      {participantes?.map((participante, index) => (
+        <Participantes
+          participante={participante}
+          index={index}
+          key={participante.id}
+        />
+      ))}
 
-        <a className="new" onClick={() => criarParticipante()}>
-          + Novo participante
-        </a>
-      </div>
+      <a className="new" onClick={() => criarParticipante()}>
+        + Novo participante
+      </a>
 
       <PushText textMain="Finalizar" textPush="Deseja finalizar o rodízio?" />
     </Container>

@@ -27,7 +27,7 @@ export const Container = styled.div`
 
     overflow: hidden;
 
-    height: 40px;
+    height: 39px;
   }
 
   .activeAsk {
