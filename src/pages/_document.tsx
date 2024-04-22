@@ -54,6 +54,7 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
           <meta charSet="utf-8" />
         </Head>
+        
         <body>
           <Main />
           <NextScript />
