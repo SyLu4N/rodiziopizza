@@ -21,14 +21,13 @@ export function ParticipantesProvider({ children }: ConfigProvider) {
 
   useEffect(() => {
     const participantesJSON = localStorage.getItem('PARTICIPANTES');
-    const newParticipantes = JSON.parse(participantesJSON ?? '');
-
-    if (!newParticipantes || !newParticipantes.lenght) {
+    if (!participantesJSON) {
       return setParticipantes([
         { id: Math.random().toFixed(5), nome: '', fatias: 0 },
       ]);
     }
 
+    const newParticipantes = JSON.parse(participantesJSON);
     setParticipantes(newParticipantes);
   }, []);
 
