@@ -29,7 +29,10 @@ const Home: NextPage = () => {
           property="og:description"
           content="RoidizioPizza é a solução perfeita para os amantes de pizza que adoram uma competição saudável com amigos ou família. Com nossa aplicação, você pode contabilizar suas próprias fatias de pizza e também as de outros participantes, criando uma experiência divertida e interativa. Acompanhe seu progresso, desafie seus amigos e veja quem consegue comer mais fatias em uma única refeição. Com o RoidizioPizza, cada mordida se torna uma oportunidade para celebrar e competir, tornando suas refeições de pizza ainda mais memoráveis e emocionantes."
         />
-        <meta property="og:image" content="https://ibb.co/xFchkDZ" />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/41DWq7k/Search-Cep-350-280-px.png"
+        />
         <meta property="og:type" content="website" />
 
         <link rel="canonical" href="https://rodiziopizza.vercel.app/" />
